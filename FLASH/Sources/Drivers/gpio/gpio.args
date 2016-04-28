@@ -1,0 +1,24 @@
+-mcpu=cortex-m0
+-mthumb
+-mfloat-abi=soft
+-g3
+-gdwarf-2
+-gstrict-dwarf
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Project_Headers"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Common"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/cpu"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers/gpio"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers/mcg"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers/uart"
+-I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Project_Settings/Startup_Code"
+-I"C:/Freescale/CW MCU v10.6.4/MCU/ARM_GCC_Support/ewl/EWL_C/include"
+-I"C:/Freescale/CW MCU v10.6.4/MCU/ARM_GCC_Support/ewl/EWL_Runtime/include"
+-O0
+-ffunction-sections
+-fdata-sections
+-Wall
+-c
+-fmessage-length=0
+-specs=ewl_c_noio.specs
