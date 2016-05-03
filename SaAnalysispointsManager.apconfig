@@ -1,6 +1,6 @@
 <Analysispoints>
 	<Name>AnalysispointsManager</Name>
-	<ProjectPath>D:/Proyectos/Continental/FRDM-KL25Z-UART/SaAnalysispointsManager.apconfig</ProjectPath>
+	<ProjectPath>E:/Proyectos/Conti/Practica 4/SaAnalysispointsManager.apconfig</ProjectPath>
 	<MaxNumberOfCores>1</MaxNumberOfCores>
 	<Comments>Analysispoints Manager</Comments>
 	<IgnoreAll>false</IgnoreAll>
