@@ -7,6 +7,7 @@
 #include "UartFsm.h"
 #include "stdtypedef.h"
 #include "RGB_LEDs.h"
+#include "Player_Fsm.h"
 
 #define CMD 0x26
 #define EQU 0x66
@@ -37,11 +38,35 @@ T_BOOL isValidFuncCMD(T_UBYTE data){
 T_UBYTE cmd_type;
 
 void sendCommand(T_UBYTE cmd, T_UBYTE func){
+	switch(cmd){
+	case CMD:
+		switch(func){
+		case Play:
+		case Pause:
+			PlayPauseReq();
+			break;
+		case Stop:
+			StopReq();
+			break;
+		case Skip:
+			Player_Fwd();
+			break;
+		case Prev:
+			Player_Rwd();
+			break;
+		}
+		break;
+	case EQU:
+		break;
+	case Album:
+		break;
+	break;
+	}
 	
 }
 
 void uart_fsm(void){
-	T_UBYTE lub_state=CmdRqst;
+	static T_UBYTE lub_state=CmdRqst;
 	blue_toggle();
 	switch(lub_state){
 	case CmdRqst:		
@@ -94,10 +119,10 @@ void UART0_IRQHandler (void)
     c = UART0_D;
     rub_data = c;
     uart_fsm();
-    if ((UART0_S1&UART_S1_TDRE_MASK)||(UART0_S1&UART_S1_TC_MASK))
+    /*if ((UART0_S1&UART_S1_TDRE_MASK)||(UART0_S1&UART_S1_TC_MASK))
     {
     	UART0_D  = c;
-    }
+    }*/
   }
 }
 #endif

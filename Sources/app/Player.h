@@ -10,7 +10,7 @@
 #include "stdtypedef.h"
 #include "Player_Fsm.h"
 
-#define ticks_per_call 5
+#define ticks_per_call 20
 #define MAX_RWD_TIME 5
 #define MAX_VOL 10
 #define MIN_VOL 2
@@ -27,7 +27,7 @@ typedef enum {
 
 typedef struct{
 	E_PLAYER_STATE State;
-	T_UBYTE Track;
+	T_SBYTE Track;
 	T_UBYTE Volume;
 	T_UWORD TrackTime;
 	T_ULONG Ticks;
@@ -46,7 +46,7 @@ void Player_ResetTrack(void);
 void Player_Init(void);
 void Player_ResetPlaylist(void);
 void Player_Update(void);
-
+void Player_SendStatus(void);
 
 
 #endif /* PLAYER_H_ */

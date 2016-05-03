@@ -54,92 +54,92 @@ void test_pwm(void){
 	}else{
 		blue_off();
 	}
-	
+
 }
 
 void app_rgb_led(void)
 {
-		red_on();
-		delay_time(BLINK_DELAY);	/* Red */
-		red_off();
-		green_on();
-		delay_time(BLINK_DELAY);	/* Green */
-		green_off();
-		blue_on();
-		delay_time(BLINK_DELAY);	/* Blue */
-		red_on();
-		delay_time(BLINK_DELAY);	/* Blue + Red */
-		green_on();
-		blue_on();
-		delay_time(BLINK_DELAY);	/* Red + Green */
-		red_off();
-		blue_on();
-		delay_time(BLINK_DELAY);	/* Green + Blue */
-		red_on();
-		delay_time(BLINK_DELAY);	/* Green + Blue + Red */
-		green_off();
-		blue_off();
+	red_on();
+	delay_time(BLINK_DELAY);	/* Red */
+	red_off();
+	green_on();
+	delay_time(BLINK_DELAY);	/* Green */
+	green_off();
+	blue_on();
+	delay_time(BLINK_DELAY);	/* Blue */
+	red_on();
+	delay_time(BLINK_DELAY);	/* Blue + Red */
+	green_on();
+	blue_on();
+	delay_time(BLINK_DELAY);	/* Red + Green */
+	red_off();
+	blue_on();
+	delay_time(BLINK_DELAY);	/* Green + Blue */
+	red_on();
+	delay_time(BLINK_DELAY);	/* Green + Blue + Red */
+	green_off();
+	blue_off();
 }
 
 void app_rgb_led_fsm(void)
 {
 	static unsigned char rgb_state = 0;
-	
+
 	switch(rgb_state)
 	{
-		case 0: /* RESET */
-			/* All off */
-			red_off();
-			green_off();
-			blue_off();
-			rgb_state = 1;
-			break;
-		case 1: /* red on */
-			red_on();
-			green_off();
-			blue_off();
-			rgb_state = 2;
-			break;
-		case 2: /* green on */
-			red_off();
-			green_on();
-			blue_off();
-			rgb_state = 3;
-			break;
-		case 3: /* blue on */
-			red_off();
-			green_off();
-			blue_on();
-			rgb_state = 4;
-			break;
-		case 4: /* red + green */
-			red_on();
-			green_on();
-			blue_off();
-			rgb_state = 5;
-			break;
-		case 5: /* red + blue */
-			red_on();
-			green_off();
-			blue_on();
-			rgb_state = 6;
-			break;
-		case 6: /* green + blue */
-			red_off();
-			green_on();
-			blue_on();
-			rgb_state = 7;
-			break;
-		case 7: /* All on */
-			red_on();
-			green_on();
-			blue_on();
-			rgb_state = 1;
-			break;
-		default:
-			/* Go to RESET */
-			rgb_state = 0;
-			break;
+	case 0: /* RESET */
+		/* All off */
+		red_off();
+		green_off();
+		blue_off();
+		rgb_state = 1;
+		break;
+	case 1: /* red on */
+		red_on();
+		green_off();
+		blue_off();
+		rgb_state = 2;
+		break;
+	case 2: /* green on */
+		red_off();
+		green_on();
+		blue_off();
+		rgb_state = 3;
+		break;
+	case 3: /* blue on */
+		red_off();
+		green_off();
+		blue_on();
+		rgb_state = 4;
+		break;
+	case 4: /* red + green */
+		red_on();
+		green_on();
+		blue_off();
+		rgb_state = 5;
+		break;
+	case 5: /* red + blue */
+		red_on();
+		green_off();
+		blue_on();
+		rgb_state = 6;
+		break;
+	case 6: /* green + blue */
+		red_off();
+		green_on();
+		blue_on();
+		rgb_state = 7;
+		break;
+	case 7: /* All on */
+		red_on();
+		green_on();
+		blue_on();
+		rgb_state = 1;
+		break;
+	default:
+		/* Go to RESET */
+		rgb_state = 0;
+		break;
 	}
 }
 
@@ -168,44 +168,38 @@ void blue_off(){
 }
 
 void set_color(COLOR c,T_UBYTE vol){
-	static T_UBYTE cont=0;
-	cont++;
-	cont %=100;
-	
 	leds_off();
-	if(cont % vol !=0){
-		switch(c){
-		case LED_RED:
-			red_on();
-			break;
-		case LED_GREEN:
-			green_on();
-			break;
-		case LED_BLUE:
-			blue_on();
-			break;
-		case LED_CYAN:
-			green_on();
-			blue_on();
-			break;
-		case LED_MAGENTA:
-			red_on();
-			blue_on();
-			break;
-		case LED_YELLOW:		
-			green_on();
-			red_on();
-			break;
-		case LED_WHITE:
-			red_on();
-			green_on();
-			blue_on();
-			break;
-		case LED_OFF:
-			leds_off();
-			break;
-		}
-	}else{}
+	switch(c){
+	case LED_RED:
+		red_on();
+		break;
+	case LED_GREEN:
+		green_on();
+		break;
+	case LED_BLUE:
+		blue_on();
+		break;
+	case LED_CYAN:
+		green_on();
+		blue_on();
+		break;
+	case LED_MAGENTA:
+		red_on();
+		blue_on();
+		break;
+	case LED_YELLOW:		
+		green_on();
+		red_on();
+		break;
+	case LED_WHITE:
+		red_on();
+		green_on();
+		blue_on();
+		break;
+	case LED_OFF:
+		leds_off();
+		break;
+	}
 
 }
 
@@ -221,8 +215,8 @@ void blue_toggle(){
 /********************************************************************/
 
 void delay_time(int number){
-  int cnt;
-  for(cnt=0;cnt<number;cnt++);
+	int cnt;
+	for(cnt=0;cnt<number;cnt++);
 }
 /********************************************************************/
 
@@ -230,43 +224,43 @@ void delay_time(int number){
 /*	init_leds()
  * initialize the ports for LEDs
  * ******************************************************************/
- 
 
- void init_leds(void)
- {
-	 
-    /* 
+
+void init_leds(void)
+{
+
+	/* 
 	 * Initialize the Red LED (PTB18)
 	 */
 
-		/* Turn on clock to PortB module */
-		SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
+	/* Turn on clock to PortB module */
+	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
 
-		/* Set the PTB18 pin multiplexer to GPIO mode */
-		PORTB_PCR18 = PORT_PCR_MUX(1);
+	/* Set the PTB18 pin multiplexer to GPIO mode */
+	PORTB_PCR18 = PORT_PCR_MUX(1);
 
-		/* Set the initial output state to high */
-		GPIOB_PSOR |= RED_SHIFT;
+	/* Set the initial output state to high */
+	GPIOB_PSOR |= RED_SHIFT;
 
-		/* Set the pins direction to output */
-		GPIOB_PDDR |= RED_SHIFT;
+	/* Set the pins direction to output */
+	GPIOB_PDDR |= RED_SHIFT;
 
 
 	/*
 	 * Initialize the Green LED (PTB19)
 	 */
 
-		/* Turn on clock to PortB module */
-		SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
+	/* Turn on clock to PortB module */
+	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
 
-		/* Set the PTB19 pin multiplexer to GPIO mode */
-		PORTB_PCR19 = PORT_PCR_MUX(1);
+	/* Set the PTB19 pin multiplexer to GPIO mode */
+	PORTB_PCR19 = PORT_PCR_MUX(1);
 
-		/* Set the initial output state to high */
-		GPIOB_PSOR |= GREEN_SHIFT;
+	/* Set the initial output state to high */
+	GPIOB_PSOR |= GREEN_SHIFT;
 
-		/* Set the pins direction to output */
-		GPIOB_PDDR |= GREEN_SHIFT;
+	/* Set the pins direction to output */
+	GPIOB_PDDR |= GREEN_SHIFT;
 
 
 
@@ -274,17 +268,17 @@ void delay_time(int number){
 	 * Initialize the Blue LED (PTD1)
 	 */
 
-		/* Turn on clock to PortB module */
-		SIM_SCGC5 |= SIM_SCGC5_PORTD_MASK;
+	/* Turn on clock to PortB module */
+	SIM_SCGC5 |= SIM_SCGC5_PORTD_MASK;
 
-		/* Set the PTD1 pin multiplexer to GPIO mode */
-		PORTD_PCR1 = PORT_PCR_MUX(1);
+	/* Set the PTD1 pin multiplexer to GPIO mode */
+	PORTD_PCR1 = PORT_PCR_MUX(1);
 
-		/* Set the initial output state to high */
-		GPIOD_PSOR = BLUE_SHIFT;
+	/* Set the initial output state to high */
+	GPIOD_PSOR = BLUE_SHIFT;
 
-		/* Set the pins direction to output */
-		GPIOD_PDDR |= BLUE_SHIFT;
-	}
+	/* Set the pins direction to output */
+	GPIOD_PDDR |= BLUE_SHIFT;
+}
 
- 
+

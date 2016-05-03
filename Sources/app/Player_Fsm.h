@@ -16,6 +16,6 @@ void VolUpReq(void);
 void VolDownReq(void);
 void FwdReq(void);
 void RwdReq(void);
-
+void Player_Fsm(void);
 
 #endif /* PLAYER_FSM_H_ */

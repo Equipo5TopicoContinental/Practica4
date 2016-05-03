@@ -28,5 +28,5 @@ void app_rgb_led_fsm(void);
 void test_pwm(void);
 void set_color(COLOR,T_UBYTE);
 void leds_off(void);
-
+void blue_toggle(void);
 #endif /* RGB_LEDS_H */

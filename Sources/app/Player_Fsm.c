@@ -10,7 +10,15 @@
 
 T_BOOL PlayPause=FALSE, Stop=FALSE, VolUp=FALSE, VolDown=FALSE, Fwd=FALSE, Rwd=FALSE;
 
+void PlayPauseReq(void);
+void StopReq(void);
+void VolUpReq(void);
+void VolDownReq(void);
+void FwdReq(void);
+void RwdReq(void);
 void Player_Fsm(void);
+
+
 
 void PlayPauseReq(void){
 	PlayPause = TRUE;

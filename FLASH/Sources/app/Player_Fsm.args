@@ -4,15 +4,15 @@
 -g3
 -gdwarf-2
 -gstrict-dwarf
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Project_Headers"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Common"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/cpu"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers/gpio"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers/mcg"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Sources/Drivers/uart"
--I"D:/Proyectos/Continental/FRDM-KL25Z-UART/Project_Settings/Startup_Code"
+-I"E:/Proyectos/Conti/Practica4/Project_Headers"
+-I"E:/Proyectos/Conti/Practica4/Sources"
+-I"E:/Proyectos/Conti/Practica4/Sources/Common"
+-I"E:/Proyectos/Conti/Practica4/Sources/cpu"
+-I"E:/Proyectos/Conti/Practica4/Sources/Drivers"
+-I"E:/Proyectos/Conti/Practica4/Sources/Drivers/gpio"
+-I"E:/Proyectos/Conti/Practica4/Sources/Drivers/mcg"
+-I"E:/Proyectos/Conti/Practica4/Sources/Drivers/uart"
+-I"E:/Proyectos/Conti/Practica4/Project_Settings/Startup_Code"
 -I"C:/Freescale/CW MCU v10.6.4/MCU/ARM_GCC_Support/ewl/EWL_C/include"
 -I"C:/Freescale/CW MCU v10.6.4/MCU/ARM_GCC_Support/ewl/EWL_Runtime/include"
 -O0
